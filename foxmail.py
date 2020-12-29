@@ -32,15 +32,14 @@ mailserver = "smtp.qq.com"
 # Fill in end
 # Sender and reciever
 # Fill in start
-sender = "2439504029@qq.com"
-receiver = "marcia_zms@163.com"
+sender = "xxx@qq.com"
+receiver = "xxx@163.com"
 # Fill in end
 
 # Auth information (Encode with base64)
 # Fill in start
 senderName = base64.b64encode(sender.encode())
-# senderCode = base64.b64encode(b"JGTHQLDNJNQMLCZE")
-senderCode = base64.b64encode(b"ofajdimfcwejebee")
+senderCode = base64.b64encode(b"xxx")
 # Fill in end
 
 # Create socket called clientSocket
@@ -120,8 +119,8 @@ clientSocket.send(msgCommand.encode())
 clientSocket.send(endmsg.encode())
 recv = clientSocket.recv(1024).decode()
 print(recv)
-if recv[:3] != '250' and recv[:3] != '554':
-    print('250 reply not received from server.')
+if recv[:3] != '554':
+    print('554 reply not received from server.')
 # Fill in end
 
 # Send QUIT command and get server response.
